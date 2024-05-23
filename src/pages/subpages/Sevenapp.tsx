@@ -10,7 +10,6 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { FaGithub, FaLink } from "react-icons/fa";
 
 function Sevenapp() {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -100,6 +99,12 @@ function Sevenapp() {
             <SwiperSlide>
               <img
                 src={etcExample}
+                alt="film"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src={etcStat}
                 alt="film"
               />
             </SwiperSlide>

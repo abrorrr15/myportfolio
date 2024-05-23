@@ -6,7 +6,6 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { FaGithub, FaLink } from "react-icons/fa";
 
 function Eightapp() {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -56,9 +55,12 @@ function Eightapp() {
             #8 Portfolio App.
           </h1>
           <p className="text-lg text-gray-800 mb-6">
-            This app totally done by Abror. It used the most recent tools & libraries. Moreover, the app has an access to back-end via Supabase (PostgreSQL).
-            A fully complex design with solid{" "}
-            <b className="text-red-500">React TS using React query, Swiper, Tailwind and etc</b>
+            This app totally done by Abror. It used the most recent tools &
+            libraries. Moreover, the app has an access to back-end via Supabase
+            (PostgreSQL). A fully complex design with solid{" "}
+            <b className="text-red-500">
+              React TS using React query, Swiper, Tailwind and etc
+            </b>
           </p>
           <Swiper
             spaceBetween={30}
@@ -74,18 +76,21 @@ function Eightapp() {
             className="w-[800px] mb-3 rounded-lg shadow-md border"
           >
             <SwiperSlide>
-              <img
-                src={portfolioHome}
-                alt="film"
-
-              />
+              <img src={portfolioHome} alt="film" />
             </SwiperSlide>
-
           </Swiper>
 
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            I need a job which is connected with front-end development. So,I created my first portfolio website, I hope you liked it. I can understand if it seems too simple or with bags (if you notice any, you can leave a message in contact form). From this project, I strenghtened skills at <b>React query library, styled-components, recharts and much more</b>!
+            I need a job which is connected with front-end development. So,I
+            created my first portfolio website, I hope you liked it. I can
+            understand if it seems too simple or with bags (if you notice any,
+            you can leave a message in contact form). From this project, I
+            strenghtened skills at{" "}
+            <b>
+              React query library, styled-components, recharts and much more
+            </b>
+            !
           </p>
 
           <a
@@ -96,7 +101,6 @@ function Eightapp() {
           >
             Only after Abror's permission you can access to this app!
           </a>
-
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Logo from '../components/Logo';
 import { RxAvatar } from 'react-icons/rx';
 import { FaGithub, FaPhone, FaTelegram } from 'react-icons/fa';
