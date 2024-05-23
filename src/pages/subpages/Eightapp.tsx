@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 function Eightapp() {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -93,14 +94,12 @@ function Eightapp() {
             !
           </p>
 
-          <a
-            href="https://github.com/abrorrr15/hotelapp"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+          to="/contact"
             className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
           >
             Only after Abror's permission you can access to this app!
-          </a>
+          </Link>
         </div>
       </div>
 
