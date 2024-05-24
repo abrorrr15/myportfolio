@@ -28,7 +28,7 @@ function Contact() {
   const { createData } = useCreateContact();
   const contentRef = useRef<HTMLDivElement | null>(null);
   const { register, handleSubmit, reset } = useForm<ContactFormInputs>();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const handleDownload = () => {
     const link = document.createElement("a");
