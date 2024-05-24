@@ -4,8 +4,10 @@ import calculator from "./images/calculator.png";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 
 function Firstapp() {
+  const { t } = useTranslation();
   const [toggle, setToggle] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
@@ -43,7 +45,7 @@ function Firstapp() {
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
           <span className="ml-2 text-3xl font-medium">
-            A Simple Calculator App
+            {t('headerTitle')}
           </span>
         </div>
         <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
@@ -53,27 +55,23 @@ function Firstapp() {
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-            #1 Calculator App.
+            {t('mainTitle')}
           </h1>
-          <p className="text-lg text-gray-800 mb-6">
-            A basic html/css design style with pure <b className="text-red-500">React Js</b>
+          <p className="text-lg text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: t('description') }}>
           </p>
           <img
             src={calculator}
             alt="Calculator"
             className="mx-auto mb-8 rounded-lg shadow-md"
           />
-          <a href="https://calculator-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">Try this app on your own with this link <FaLink /></a>
+          <a href="https://calculator-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">{t('tryAppLink')} <FaLink /></a>
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            With a clean and user-friendly interface, you can quickly add,
-            subtract, multiply, and divide numbers with ease. The app also
-            supports decimal numbers and basic memory functions, making it
-            versatile for various calculation needs.
+            {t('featuresDescription')}
           </p>
           <p className="text-lg text-gray-800 mb-6">
-            <h4>Here is a main code functionality of calculator:</h4><br />
-            <p onClick={() => setToggle(d => !d)} className="cursor-pointer text-blue-600">Click to see the code &darr;</p>
+            <h4>{t('codeTitle')}</h4><br />
+            <p onClick={() => setToggle(d => !d)} className="cursor-pointer text-blue-600">{t('clickToSeeCode')}&darr;</p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto">
               {toggle && <code>
                 {`
@@ -179,7 +177,7 @@ function Calculator() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
           >
-            Or you can check out code via <span><FaGithub size={25} className="text-black"/></span>
+            {t('checkCodeLink')} <span><FaGithub size={25} className="text-black"/></span>
           </a>
           </p>
         </div>
@@ -190,7 +188,7 @@ function Calculator() {
         className="absolute top-4 right-4 px-4 py-2 text-lg bg-white text-gray-800 rounded-lg shadow-md hover:bg-gray-200 duration-300 font-mono"
         onClick={() => navigate(-1)}
       >
-        &larr; BACK
+        &larr; {t('backButton')}
       </button>
     </div>
   );

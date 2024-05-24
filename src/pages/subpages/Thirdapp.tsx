@@ -9,8 +9,10 @@ import { useNavigate } from "react-router";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Thirdapp() {
+  const { t } = useTranslation();
   const contentRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
@@ -46,7 +48,7 @@ function Thirdapp() {
       <header className="flex items-center justify-between w-full px-4 py-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
-          <span className="ml-2 text-3xl font-medium">A Blog App</span>
+          <span className="ml-2 text-3xl font-medium">{t("headerTitle3")}</span>
         </div>
         <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
       </header>
@@ -55,11 +57,10 @@ function Thirdapp() {
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-            #3 Blog App.
+            {t("blogAppNumber3")}
           </h1>
           <p className="text-lg text-gray-800 mb-6">
-            A complex design with solid{" "}
-            <b className="text-red-500">React Js using Redux, Redux/toolkit, Tailwind and etc</b>
+            {t("description3")} <b className="text-red-500">{t("reactJs")}</b>
           </p>
           <Swiper
             spaceBetween={30}
@@ -72,31 +73,26 @@ function Thirdapp() {
             className="w-[800px] mb-3 rounded-lg shadow-md"
           >
             <SwiperSlide>
-              <img
-                src={atomicDayIntro}
-                alt="film"
-
-              />
+              <img src={atomicDayIntro} alt="film" />
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                src={atomicNightInto}
-                alt="film"
-
-              />
+              <img src={atomicNightInto} alt="film" />
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                src={atomicSearch}
-                alt="film"
-
-              />
+              <img src={atomicSearch} alt="film" />
             </SwiperSlide>
           </Swiper>
-          <a href="https://abror-blog.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">Try this app on your own with this link <FaLink /></a>
+          <a
+            href="https://abror-blog.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4"
+          >
+            {t("tryAppLink")} <FaLink />
+          </a>
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            So, it the next big project which took a week or more to complete. Of course, <u>I admit it was not my idea of the project since I did this following YouTube video</u>. From this project, I discovered <b>Redux library, Tailwind and much more</b>!
+            {t("discoverProject")} <b>Redux library, Tailwind and {t("much more")}</b>!
           </p>
 
           <a
@@ -105,9 +101,11 @@ function Thirdapp() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
           >
-            You can check out code via <span><FaGithub size={25} className="text-black"/></span>
+            {t("githubLinkText")}{" "}
+            <span>
+              <FaGithub size={25} className="text-black" />
+            </span>
           </a>
-
         </div>
       </div>
 
@@ -116,7 +114,7 @@ function Thirdapp() {
         className="absolute top-4 right-4 px-4 py-2 text-lg bg-white text-gray-800 rounded-lg shadow-md hover:bg-gray-200 duration-300 font-mono"
         onClick={() => navigate(-1)}
       >
-        &larr; BACK
+        {t("backButtonText")}
       </button>
     </div>
   );

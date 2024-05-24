@@ -53,7 +53,7 @@ function About() {
             {t('introduction')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            {t('hiIm')} <b>Abror Xoliqov</b>, {t('softwareEngineer')} <b><i>(front-end developer)</i></b> with a strong background in web development and a keen interest in new technologies.
+            {t('hiIm')} <b>{t("AbrorXoliqov")}</b>, {t('apassionatesoftwareengineer')} <b><i>(front-end {t("developer")})</i></b> {t("withastrongbackgroundinwebdevelopmentandakeeninterestinnewtechnologies.")}
           </p>
         </section>
         <hr className="w-full" />
@@ -62,7 +62,7 @@ function About() {
             {t('background')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            I am a student at the National University of Uzbekistan Tashkent. I have worked on various projects, both independently and as part of a team, and I am currently employed at <b>IST Telekom</b>. Down below you can see photos of my university and office.
+            {t("I am a student at the National University of Uzbekistan Tashkent. I have worked on various projects, both independently and as part of a team, and I am currently employed at")} <b>IST Telekom</b>{t(". Down below you can see photos of my university and office.")}
           </p>
           <br />
           <div className="grid grid-cols-2 grid-rows-1 place-items-center">
@@ -99,7 +99,7 @@ function About() {
             {t('studyJourney')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            My programming journey began on <u>January 12, 2024</u>. Without access to offline courses or a personal teacher, I relied solely on <b>YouTube</b> lessons to learn programming. Starting without a computer, only a smartphone. I faced and overcame numerous challenges. This experience not only honed my problem-solving skills but also instilled a strong sense of resilience and self-discipline, setting me apart from other applicants. In addition, I have taken IELTS in 2023 year studying on my own too, score you can see below in the photo.
+            {t("My programming journey began on ")}<u>{t("January 12, 2024")}</u>{t(". Without access to offline courses or a personal teacher, I relied solely on")} <b>YouTube</b> {t("lessons to learn programming. Starting without a computer, only a smartphone. I faced and overcame numerous challenges. This experience not only honed my problem-solving skills but also instilled a strong sense of resilience and self-discipline, setting me apart from other applicants. In addition, I have taken IELTS in 2023 year studying on my own too, score you can see below in the photo.")}
           </p>
           <br />
           <img src="ielts.png" alt="ielts" className="w-fit rounded-[15px]" />
@@ -110,7 +110,7 @@ function About() {
             {t('skills')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            I am proficient in HTML, CSS, JavaScript, and have experience with frameworks and libraries like React, Redux and React-query. I am also familiar with TypeScript, Git, and various development tools.
+            {t("I am proficient in HTML, CSS, JavaScript, and have experience with frameworks and libraries like React, Redux and React-query. I am also familiar with TypeScript, Git, and various development tools.")}
           </p>
         </section>
         <hr className="w-full" />
@@ -119,7 +119,7 @@ function About() {
             {t('currentWork')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            Currently, I am working on several personal projects, exploring new technologies like Vue.js and Next js, and contributing to open source projects.
+            {t("Currently, I am working on several personal projects, exploring new technologies like Vue.js and Next js, and contributing to open source projects.")}
           </p>
         </section>
         <hr className="w-full" />
@@ -128,7 +128,7 @@ function About() {
             {t('hobbiesAndInterests')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            In my free time, I enjoy coding and reading tech blogs. I also love traveling and exploring new cultures.
+            {t("In my free time, I enjoy coding and reading tech blogs. I also love traveling and exploring new cultures.")}
           </p>
         </section>
         <hr className="w-full" />
@@ -137,7 +137,7 @@ function About() {
             {t('contact')}
           </h1>
           <p className="lg:text-lg 2xl:text-md">
-            Feel free to reach out to me via email at <b>abrorrr15@gmail.com</b> or connect with me on social media:
+            {t("Feel free to reach out to me via email at ")}<b>abrorrr15@gmail.com</b>{t(" or connect with me on social media:")}
           </p>
           <div className="flex gap-4 mt-4">
             <a

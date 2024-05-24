@@ -6,7 +6,7 @@ export default {
       keyframes: {
         typing: {
           'from': { width: '0ch' },
-          'to': { width: '13ch' },  // Adjust '13ch' to match the length of your text
+          'to': { width: '15ch' },  // Adjust '13ch' to match the length of your text
         },
         blink: {
           '0%, 100%': { borderColor: 'transparent' },
@@ -14,7 +14,7 @@ export default {
         }
       },
       animation: {
-        typing: 'typing 2s steps(13) infinite alternate',  // Adjust duration and steps as needed
+        typing: 'typing 2s steps(15) infinite alternate',  // Adjust duration and steps as needed
         blink: 'blink 1s step-end infinite',
       },
     },

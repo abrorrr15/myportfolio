@@ -11,8 +11,10 @@ import { useNavigate } from "react-router";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Fifthapp() {
+  const {t} = useTranslation();
   const contentRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
@@ -48,7 +50,7 @@ function Fifthapp() {
       <header className="flex items-center justify-between w-full px-4 py-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
-          <span className="ml-2 text-3xl font-medium">A Note App</span>
+          <span className="ml-2 text-3xl font-medium">{t("A Note App")}</span>
         </div>
         <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
       </header>
@@ -57,12 +59,11 @@ function Fifthapp() {
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-            #5 Note App.
+           {t(" #5 Note App.")}
           </h1>
           <p className="text-lg text-gray-800 mb-6">
-            This app is like a note tool where you can set time and city you visited and rate it or comment. There is even a GPS for defining your current position.
-            A complete design with solid{" "}
-            <b className="text-red-500">React Js using React query, Styled components and etc</b>
+            {t("This app is like a note tool where you can set time and city you visited and rate it or comment. There is even a GPS for defining your current position.A complete design with solid")}{" "}
+            <b className="text-red-500">{t("React Js using React query, Styled components and etc")}</b>
           </p>
           <Swiper
             spaceBetween={30}
@@ -107,10 +108,10 @@ function Fifthapp() {
               />
             </SwiperSlide>
           </Swiper>
-          <a href="https://worldwise-projects.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">Try this app on your own with this link <FaLink /></a>
+          <a href="https://worldwise-projects.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">{t("try_app")} <FaLink /></a>
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            So, it was the next one of complicated project which took more than a two weeks to complete. Of course, <u>I admit it was not my idea of the project since I did this following YouTube video</u>. From this project, I discovered <b>React query library, styled-components and much more</b>!
+            {t("So, it was the next one of complicated project which took more than a two weeks to complete. Of course, ")}<u>{t("I admit it was not my idea of the project since I did this following YouTube video")}</u>. {t("From this project, I discovered ")}<b>React query library, styled-components and {t("much more")}</b>!
           </p>
 
           <a
@@ -119,7 +120,7 @@ function Fifthapp() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
           >
-            You can check out code via <span><FaGithub size={25} className="text-black" /></span>
+            {t("checkCodeLink")} <span><FaGithub size={25} className="text-black" /></span>
           </a>
 
         </div>
@@ -130,7 +131,7 @@ function Fifthapp() {
         className="absolute top-4 right-4 px-4 py-2 text-lg bg-white text-gray-800 rounded-lg shadow-md hover:bg-gray-200 duration-300 font-mono"
         onClick={() => navigate(-1)}
       >
-        &larr; BACK
+        &larr; {t("backButton")}
       </button>
     </div>
   );

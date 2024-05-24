@@ -13,7 +13,7 @@ i18n.use(initReactI18next).init({
       translation: ru,
     },
   },
-  lng: 'en', // Default language
+  lng: 'ru', // Default language
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false,

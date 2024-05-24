@@ -28,8 +28,10 @@ import {
 } from "react-icons/ri";
 import Logo from "../components/Logo";
 import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 function Works() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState<string | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -70,7 +72,7 @@ function Works() {
       <header className="flex items-center justify-between text-white fade-in">
         <div className="flex items-center m-[2em] mb-[1em] xl:mb-[1.3em] xl:m-[1.5em] 2xl:m-[1em] 2xl:mb-[1.5em] text-3xl font-medium text-white fade-in">
           <PiSuitcaseSimple size={35} />
-          <span className="ml-2">Projects / Portfolio</span>
+          <span className="ml-2">{t("Projects / Portfolio")}</span>
         </div>
         <Logo />
       </header>
@@ -226,7 +228,7 @@ function Works() {
                 onClick={() => handleToggle("1")}
               >
                 <p className="font-bold text-center mb-2">
-                  Languages & Techs used:
+                  {t("Languages & Techs used")}:
                 </p>
                 <div className="grid grid-cols-2">
                   <div className="flex items-center">
@@ -312,7 +314,7 @@ function Works() {
               onClick={() => handleToggle("2")}
             >
               <p className="font-bold text-center mb-2">
-                Languages & Techs used:
+                {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
@@ -411,7 +413,7 @@ function Works() {
               onClick={() => handleToggle("3")}
             >
               <p className="font-bold text-center mb-2">
-                Languages & Techs used:
+                {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
@@ -480,7 +482,7 @@ function Works() {
               onClick={() => handleToggle("4")}
             >
               <p className="font-bold text-center mb-2">
-                Languages & Techs used:
+                {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
@@ -568,6 +570,8 @@ function Works() {
                 className="m-3 w-full"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
+                {" "}
+             
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
                   size={40}
@@ -585,9 +589,7 @@ function Works() {
               className="bg-[#ffffff80] text-gray-800 bg-opacity-90 p-2 rounded-lg shadow-md ml-3"
               onClick={() => handleToggle("5")}
             >
-              <p className="font-bold text-center mb-2">
-                Languages & Techs used:
-              </p>
+              <p className="font-bold text-center mb-2">   {t("Languages & Techs used")}:</p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
                   <FaHtml5 className="text-red-500 mr-1" size={20} />
@@ -763,7 +765,7 @@ function Works() {
               onClick={() => handleToggle("6")}
             >
               <p className="font-bold text-center mb-2">
-                Languages & Techs used:
+              {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
@@ -882,7 +884,7 @@ function Works() {
               onClick={() => handleToggle("7")}
             >
               <p className="font-bold text-center mb-2">
-                Languages & Techs used:
+              {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">

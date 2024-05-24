@@ -29,8 +29,10 @@ import { VscTerminal } from "react-icons/vsc";
 import Logo from "../components/Logo";
 import { IoIosSchool } from "react-icons/io";
 import { MdInfoOutline, MdWork } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 function Experience() {
+  const { t } = useTranslation();
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -43,7 +45,7 @@ function Experience() {
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     const contentElements = contentRef.current?.querySelectorAll(".fade-in");
@@ -66,7 +68,7 @@ function Experience() {
       <header className="flex items-center justify-between  font-medium text-white fade-in">
         <div className="flex items-center  m-[2em] mb-[1em] xl:mb-[1.3em] xl:m-[1.5em] 2xl:m-[1em] 2xl:mb-[1.5em] text-3xl font-medium text-white fade-in">
           <PiStudentFill size={35} />
-          <span className="ml-2">Education / Experience</span>
+          <span className="ml-2">{t("Education / Experience")}</span>
         </div>
         <Logo />
       </header>
@@ -75,7 +77,7 @@ function Experience() {
         <section className="mr-2">
           <h1 className="text-4xl font-bold mb-8 flex gap-2 items-center">
             <IoIosSchool />
-            Education
+            {t("Education")}
           </h1>
           <div className="space-y-5">
             <div>
@@ -84,7 +86,7 @@ function Experience() {
               </label>
               <input
                 type="text"
-                value="School №1"
+                value={t("School №1")}
                 disabled
                 className="w-full bg-zinc-500 text-white border-none rounded-[5px] p-2 text-lg"
               />
@@ -96,7 +98,7 @@ function Experience() {
               </label>
               <input
                 type="text"
-                value="English"
+                value={t("English")}
                 disabled
                 className="w-full bg-zinc-500 text-white border-none rounded-[5px] p-2 text-lg"
               />
@@ -104,11 +106,11 @@ function Experience() {
             <hr className="border-gray-800" />
             <div>
               <label className="block font-semibold text-xl mb-1">
-                2023-continuing:
+                2023-{t("continuing")}:
               </label>
               <input
                 type="text"
-                value="National University of Uzbekistan Tashkent"
+                value={t("National University of Uzbekistan Tashkent")}
                 disabled
                 className="w-full bg-zinc-500 text-white border-none rounded-[5px] p-2 text-lg"
               />
@@ -116,11 +118,11 @@ function Experience() {
             <hr className="border-gray-800" />
             <div>
               <label className="block font-semibold text-xl mb-1">
-                12.01.2024-continuing:
+                12.01.2024-{t("continuing")}:
               </label>
               <input
                 type="text"
-                value="Programming / Software Engineering at home"
+                value={t("Programming / Software Engineering at home")}
                 disabled
                 className="w-full bg-zinc-500 text-white border-none rounded-[5px] p-2 text-lg"
               />
@@ -132,16 +134,16 @@ function Experience() {
         <section>
           <h1 className="text-4xl font-bold mb-8 flex items-center gap-2">
             <MdWork />
-            Experience
+            {t("Experience")}
           </h1>
           <div className="space-y-5">
             <div>
               <label className="block font-semibold text-xl mb-1">
-                26.04.2024-continuing:
+                26.04.2024-{t("continuing")}:
               </label>
               <input
                 type="text"
-                value="Job at etc.uz (IST Telekom)"
+                value={t("Job at etc.uz (IST Telekom)")}
                 disabled
                 className="w-full bg-zinc-500 text-white border-none rounded-[5px] p-2 text-lg"
               />
@@ -149,11 +151,11 @@ function Experience() {
             <hr className="border-gray-800" />
             <div>
               <label className="block font-semibold text-xl mb-1">
-                2024-continuing:
+                2024-{t("continuing")}:
               </label>
               <input
                 type="text"
-                value="Working on PET-projects"
+                value={t("Working on PET-projects")}
                 disabled
                 className="w-full bg-zinc-500 text-white border-none rounded-[5px] p-2 text-lg"
               />
@@ -163,11 +165,11 @@ function Experience() {
       </main>
 
       <section className="px-8 md:px-32 mt-12 text-start fade-in">
-        <h1 className="text-4xl font-bold mb-8">Skills</h1>
+        <h1 className="text-4xl font-bold mb-8">{t("skills")}</h1>
         <div className="space-y-5">
           <div>
             <label className="block font-semibold text-xl mb-1">
-              Programming Languages:
+              {t("Programming Languages:")}
             </label>
             <div className="flex gap-10 mt-5">
               <FaHtml5 size={50} className="text-red-500" />
@@ -178,7 +180,7 @@ function Experience() {
           <hr className="border-gray-800" />
           <div>
             <label className="block font-semibold text-xl mb-1">
-              Frameworks & Libraries:
+              {t("Frameworks & Libraries:")}
             </label>
             <div className="flex gap-10 mt-5">
               <FaReact
@@ -199,7 +201,7 @@ function Experience() {
           <hr className="border-gray-800" />
           <div>
             <label className="block font-semibold text-xl mb-1">
-              Tools & Platforms:
+              {t("Tools & Platforms:")}
             </label>
             <div className="flex gap-10 mt-5">
               <FaGithub size={50} className="bg-white rounded-[50%]" />
@@ -213,12 +215,10 @@ function Experience() {
           <div>
             <label className="flex items-center gap-1 font-semibold text-xl mb-1">
               <MdInfoOutline />
-              Other Skills:
+              {t("Other Skills:")}
             </label>
             <p className="w-full bg-zinc-400 text-white border-none rounded-[5px] p-2 text-lg">
-              <b className="text-green-500">English C1</b>, Problem-solving,
-              Team collaboration, Friendly, Polite, Tolerable, Cognitive
-              thinking, Thankful and etc.
+              <b className="text-green-500">{t("English C1")}</b>, {t("Problem-solving, Team collaboration, Friendly, Polite, Tolerable, Cognitive thinking, Thankful and etc.")}
             </p>
           </div>
         </div>
@@ -226,12 +226,12 @@ function Experience() {
 
       <section className="px-8 md:px-32 mt-12 text-start fade-in">
         <h1 className="text-4xl font-bold mb-8">
-          Currently Learning / Planning to Learn
+          {t("Currently Learning / Planning to Learn")}
         </h1>
         <div className="space-y-5">
           <div>
             <label className="block font-semibold text-xl mb-1">
-              Current Learning:
+              {t("Current Learning:")}
             </label>
             <div className="flex gap-10 mt-5">
               <FaNodeJs size={50} className="text-green-600" />
@@ -240,7 +240,7 @@ function Experience() {
           <hr className="border-gray-800" />
           <div>
             <label className="block font-semibold text-xl mb-1">
-              Planning to Learn:
+              {t("Planning to Learn:")}
             </label>
             <div className="flex gap-10 mt-5">
               <RiNextjsFill size={50} className="text-black" />

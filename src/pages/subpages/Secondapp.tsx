@@ -7,8 +7,10 @@ import { useNavigate } from "react-router";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { FaLink } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Secondapp() {
+  const {t} = useTranslation();
   const [toggle, setToggle] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
@@ -45,7 +47,7 @@ function Secondapp() {
       <header className="flex items-center justify-between w-full px-4 py-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
-          <span className="ml-2 text-3xl font-medium">A Film Search App</span>
+          <span className="ml-2 text-3xl font-medium">{t("headerTitle2")}</span>
         </div>
         <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
       </header>
@@ -54,12 +56,12 @@ function Secondapp() {
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-            #2 Film Search App.
+            {t("mainTitle2")}
           </h1>
-          <p className="text-lg text-gray-800 mb-6">
-            A bit more complex html/css design style with pure{" "}
-            <b className="text-red-500">React Js</b>
-          </p>
+          <p
+            className="text-lg text-gray-800 mb-6"
+            dangerouslySetInnerHTML={{ __html: t("description2") }}
+          ></p>
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -71,36 +73,36 @@ function Secondapp() {
             className="w-[800px] mb-3 rounded-lg shadow-md"
           >
             <SwiperSlide>
-              <img
-                src={filmIntro}
-                alt="film"
-
-              />
+              <img src={filmIntro} alt="film" />
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                src={filmSearch}
-                alt="film"
-              />
+              <img src={filmSearch} alt="film" />
             </SwiperSlide>
           </Swiper>
-          <a href="https://film-fetching.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">Try this app on your own with this link <FaLink /></a>
+          <a
+            href="https://film-fetching.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4"
+          >
+            {t("tryAppLink2")} <FaLink />
+          </a>
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            It was my first bigger project which I built within 1 month of study. As you can see it is not a complicated project. Just to show my fetching skills {";)"}
+            {t("featuresDescription2")}
           </p>
           <p className="text-lg text-gray-800 mb-6">
-            <h4>Here is a main code functionality of film app:</h4>
+            <h4>{t("codeTitle")}</h4>
             <br />
             <p
               onClick={() => setToggle((d) => !d)}
               className="cursor-pointer text-blue-600"
             >
-              Click to see the code &darr;
+              {t("clickToSeeCode")}
             </p>
-
             <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto">
-              {toggle && (<code>{`
+              {toggle && (
+                <code>{`
 import { useEffect, useState, useRef } from "react";
 import "./film.css";
 import { useMovies } from "./useMovies";
@@ -356,9 +358,9 @@ function FootEng() {
     </div>
   );
 }
-`}</code>)}
+`}</code>
+              )}
             </pre>
-
           </p>
         </div>
       </div>

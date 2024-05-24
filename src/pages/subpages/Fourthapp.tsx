@@ -4,8 +4,10 @@ import hangman from "./images/hangman.png";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Firstapp() {
+  const { t } = useTranslation();
   const [toggle, setToggle] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
@@ -42,9 +44,7 @@ function Firstapp() {
       <header className="flex items-center justify-between w-full px-4 py-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
-          <span className="ml-2 text-3xl font-medium">
-            A Hangman Game🎯
-          </span>
+          <span className="ml-2 text-3xl font-medium">{t("header")}</span>
         </div>
         <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
       </header>
@@ -53,34 +53,41 @@ function Firstapp() {
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-            #4 Hangman App.
+            {t("blogAppNumber4")}.
           </h1>
           <p className="text-lg text-gray-800 mb-6">
-            App with pure <b className="text-red-500">React TS</b>
+          {t("app_description")} <b className="text-red-500">React TS</b>
           </p>
           <img
             src={hangman}
             alt="Calculator"
             className="mx-auto mb-8 rounded-lg shadow-md"
           />
-          <a href="https://abror-hangman.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">Try this app on your own with this link <FaLink /></a>
+          <a
+            href="https://abror-hangman.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4"
+          >
+            {t("try_app")} <FaLink />
+          </a>
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            A basic game for practising Typescript. It was my first project using <b>Typescript</b>.
+          {t("game_description")}<b>Typescript</b>.
           </p>
           <p className="text-lg text-gray-800 mb-6">
-            <a
-              href="https://github.com/abrorrr15/blog"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
+
+            <br />
+            <p
+              onClick={() => setToggle((d) => !d)}
+              className="cursor-pointer text-blue-600"
             >
-              You can check out code via <span><FaGithub size={25} className="text-black" /></span>
-            </a><br />
-            <p onClick={() => setToggle(d => !d)} className="cursor-pointer text-blue-600">Click to see the code &darr;</p>
+              {t("clickToSeeCode")} &darr;
+            </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto">
-              {toggle && <code>
-                {`
+              {toggle && (
+                <code>
+                  {`
 import { useReducer, useState } from 'react';
 import './calculator.css';
 
@@ -175,9 +182,22 @@ function Calculator() {
   );
 }
                 `}
-              </code>}
+                </code>
+              )}
             </pre>
+            
           </p>
+          <a
+              href="https://github.com/abrorrr15/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
+            >
+             {t("checkCodeLink")} {" "}
+              <span>
+                <FaGithub size={25} className="text-black" />
+              </span>
+            </a>
         </div>
       </div>
 

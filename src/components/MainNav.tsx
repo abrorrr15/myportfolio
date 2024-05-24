@@ -8,6 +8,7 @@ import {
 import styled from "styled-components";
 import { useState } from "react";
 import { PiStudentFill } from "react-icons/pi";
+import { useTranslation } from "react-i18next";
 
 const Li = styled.li<{ active: boolean }>`
   width: 100%;
@@ -98,6 +99,7 @@ const IconContainer = styled.div`
 `;
 
 function MainNav() {
+  const { t } = useTranslation();
   const [activeLink, setActiveLink] = useState<string | null>(null);
 
   function handleClick(link: string): void {
@@ -108,28 +110,28 @@ function MainNav() {
     <nav>
       <ul className="space-y-4 xl:space-y-6 2xl:space-y-8 mr-2">
         {[
-          { to: "/", label: "Home", icon: <HiOutlineHome />, link: "/" },
+          { to: "/", label: t("Home"), icon: <HiOutlineHome />, link: "/" },
           {
             to: "/about",
-            label: "About",
+            label: t("About"),
             icon: <MdOutlineInfo />,
             link: "About",
           },
           {
             to: "/experience",
-            label: "Experience",
+            label: t("Experience"),
             icon: <PiStudentFill />,
             link: "Experience",
           },
           {
             to: "/works",
-            label: "Works",
+            label: t("Works"),
             icon: <MdOutlineWorkHistory />,
             link: "Works",
           },
           {
             to: "/contact",
-            label: "Contact",
+            label: t("Contact"),
             icon: <MdOutlineContactMail />,
             link: "Contact",
           },

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import MainNav from './MainNav';
+import russia from "../../public/russia.png";
+import UK from "../../public/united-kingdom.png";
 
 function Navbar() {
   const { i18n } = useTranslation();
@@ -24,13 +26,13 @@ function Navbar() {
             onClick={() => changeLanguage('en')}
             className={`w-8 rounded ${activeLang === 'en' ? 'border-2 border-blue-500' : ''} hover:border-2 hover:border-gray-500`}
           >
-            <img src="united-kingdom.png" alt="en" className='w-full h-full' />
+            <img src={UK} alt="en" className='w-full h-full' />
           </button>
           <button 
             onClick={() => changeLanguage('ru')}
             className={`w-8 rounded ${activeLang === 'ru' ? 'border-2 border-blue-500' : ''} hover:border-2 hover:border-gray-500`}
           >
-            <img src="russia.png" alt="ru" className='w-full h-full' />
+            <img src={russia} alt="ru" className='w-full h-full' />
           </button>
         </div>
         <MainNav />

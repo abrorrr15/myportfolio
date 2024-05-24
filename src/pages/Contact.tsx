@@ -14,17 +14,21 @@ import {
 import { TfiEmail } from "react-icons/tfi";
 import { useCreateContact } from "../components/useCreateContact";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
+
 type ContactFormInputs = {
   name: string;
   phone: string;
   email: string;
   message: string;
 };
+
 function Contact() {
   const [isOpen, setIsOpen] = useState(false);
   const { createData } = useCreateContact();
   const contentRef = useRef<HTMLDivElement | null>(null);
   const { register, handleSubmit, reset } = useForm<ContactFormInputs>();
+  const { t, i18n } = useTranslation();
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -94,7 +98,7 @@ function Contact() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="text-3xl font-medium text-white mb-5 fade-in2">
-          Contact Form
+          {t('contactForm')}
         </h1>
         <div className="grid grid-cols-2 gap-4 w-full max-w-md">
           {/* Form inputs */}
@@ -106,14 +110,14 @@ function Contact() {
               <span>
                 <IoInformationCircleOutline className="text-red-500" />
               </span>
-              Name
+              {t('name')}
             </label>
             <input
               type="text"
               id="name"
               placeholder="Jhon"
               {...register("name", {
-                required: "This field is required",
+                required: t("This field is required") as string,
               })}
               className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -121,7 +125,7 @@ function Contact() {
           {/* Other input fields */}
           <div className="fade-in2">
             <label htmlFor="phone" className="text-gray-300">
-              Phone
+              {t('phone')}
             </label>
             <input
               type="text"
@@ -139,14 +143,14 @@ function Contact() {
               <span>
                 <IoInformationCircleOutline className="text-red-500" />
               </span>
-              Email
+              {t('email')}
             </label>
             <input
               type="email"
               id="email"
               placeholder="exmple@gmail.com"
               {...register("email", {
-                required: "This field is required",
+                required: t("This field is required") as string,
               })}
               className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -159,13 +163,13 @@ function Contact() {
               <span>
                 <IoInformationCircleOutline className="text-red-500" />
               </span>
-              Message
+              {t('message')}
             </label>
             <textarea
               rows={3}
               id="message"
               {...register("message", {
-                required: "This field is required",
+                required: t("This field is required") as string,
               })}
               className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
@@ -175,13 +179,13 @@ function Contact() {
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 fade-in2"
             >
-              Submit
+              {t('submit')}
             </button>
             <button
               onClick={toggleContactDetails}
               className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded ml-4 fade-in2"
             >
-              Show Contact Details
+              {t('showContactDetails')}
             </button>
           </div>
         </div>
@@ -194,10 +198,10 @@ function Contact() {
             className="text-red-500 mt-3 cursor-pointer"
             onClick={toggleContactForm}
           >
-            &larr; <b>Return to contact form</b>
+            &larr; <b>{t('returnToContactForm')}</b>
           </div>
           <h1 className="text-red-300 font-bold text-3xl my-5 mx-3">
-            My contact details:
+            {t('myContactDetails')}
           </h1>
           <div className="grid grid-cols-2 gap-5 bg-[#ffffff74] p-5 rounded-md">
             {/* First Column */}
@@ -222,7 +226,7 @@ function Contact() {
             <div>
               <p className="flex items-center select-none mb-3">
                 <BiFlag className="mr-2" />
-                <span>Uzbekistan, Tashkent</span>
+                <span>{t('uzbekistan')}</span>
               </p>
               <hr className="w-full my-2" />
               <p className="flex items-center gap-4 mb-3 select-none">
@@ -271,7 +275,7 @@ function Contact() {
                   onClick={handleDownload}
                   className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded"
                 >
-                  Download CV
+                  {t('downloadCV')}
                 </button>
               </div>
             </div>
