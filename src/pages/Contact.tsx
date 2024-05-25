@@ -52,7 +52,6 @@ function Contact() {
       {
         onSuccess: () => {
           reset();
-          toast.success("Thank you for message!");
         },
       }
     );
