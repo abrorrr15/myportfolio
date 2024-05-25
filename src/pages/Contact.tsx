@@ -213,7 +213,7 @@ function Contact() {
               <hr className="w-full my-2" />
               <p className="flex items-center mb-3">
                 <BiPhone className="mr-2" />
-                <span className="select-all">+998-97-874-05-15</span>
+                <span className="select-all">+998-33-443-15-12</span>
               </p>
               <hr className="w-full my-2" />
               <p className="flex items-center">
