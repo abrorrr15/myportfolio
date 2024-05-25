@@ -17,12 +17,14 @@ import Sixapp from "./pages/subpages/Sixapp";
 import Sevenapp from "./pages/subpages/Sevenapp";
 import Eightapp from "./pages/subpages/Eightapp";
 import Nineapp from "./pages/subpages/Nineapp";
+import { Toaster } from "react-hot-toast";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <Toaster />
       <BrowserRouter>
         <Routes>
           <Route element={<AppLayout />}>
@@ -43,7 +45,7 @@ function App() {
             <Route path="project/8" element={<Eightapp />} />
             <Route path="project/9" element={<Nineapp />} />
           </Route>
-          <Route path="abror/messages/1517/1504" element={<Messages />} />
+          <Route path="20005" element={<Messages />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

@@ -15,6 +15,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { useCreateContact } from "../components/useCreateContact";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
+import Loading from "../components/Loading";
 
 type ContactFormInputs = {
   name: string;
@@ -25,7 +26,7 @@ type ContactFormInputs = {
 
 function Contact() {
   const [isOpen, setIsOpen] = useState(false);
-  const { createData } = useCreateContact();
+  const { createData, isLoading } = useCreateContact();
   const contentRef = useRef<HTMLDivElement | null>(null);
   const { register, handleSubmit, reset } = useForm<ContactFormInputs>();
   const { t } = useTranslation();
@@ -56,9 +57,7 @@ function Contact() {
       }
     );
   }
-  // function onError(errors: string[]) {
-  //   console.log(errors);
-  // }
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -176,12 +175,14 @@ function Contact() {
           </div>
           <div className="col-span-2 fade-in2">
             <button
+            disabled={isLoading}
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 fade-in2"
             >
               {t('submit')}
             </button>
             <button
+
               onClick={toggleContactDetails}
               className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded ml-4 fade-in2"
             >

@@ -1,7 +1,8 @@
-
+import { useDeleteContact } from "../components/useDeleteContact";
 import { useContact } from "./../components/useContact";
 
 const Messages = () => {
+  const { deleteMessage, isLoading } = useDeleteContact();
   const { data: contacts, error } = useContact();
   console.log(contacts);
 
@@ -24,12 +25,21 @@ const Messages = () => {
           </div>
           <div>
             <b>Message:</b> {contact.message}
+            <button
+              className="px-2 py-1 text-white ml-3 bg-red-700 rounded-lg hover:bg-red-400 duration-300"
+              disabled={isLoading}
+              onClick={() => deleteMessage(contact.id)}
+            >
+              delete ALL
+            </button>
           </div>
           <br />
+
           <hr className="w-full ml-2" />
-          <br />
         </div>
       ))}
+
+      <br />
     </ul>
   );
 };

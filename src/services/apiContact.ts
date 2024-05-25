@@ -11,7 +11,7 @@ type Contact = {
 // Function to get contacts
 export async function getContact(): Promise<Contact[]> {
   const { data, error } = await supabase
-    .from("contact")  // Provide the correct type argument for the table
+    .from("contact") // Provide the correct type argument for the table
     .select("*");
 
   if (error) {
@@ -26,12 +26,11 @@ export async function getContact(): Promise<Contact[]> {
 
 // Function to create a new contact
 export async function createContact(newContact: {}): Promise<Contact> {
-  
   const { data, error } = await supabase
-    .from("contact")  // Provide the correct type argument for the table
-    .insert([newContact])      // Ensure we pass an array
+    .from("contact") // Provide the correct type argument for the table
+    .insert([newContact]) // Ensure we pass an array
     .select()
-    .single();                 // Get a single result
+    .single(); // Get a single result
 
   if (error) {
     console.error("Error creating contact:", error);
@@ -41,4 +40,13 @@ export async function createContact(newContact: {}): Promise<Contact> {
   console.log("Created contact:", data);
 
   return data as Contact;
+}
+export async function deleteContact(id:number) {
+  const { data, error } = await supabase
+    .from("contact")
+    .delete()
+    .eq("id", id);
+  if (error) throw new Error(error.message);
+
+  return data
 }

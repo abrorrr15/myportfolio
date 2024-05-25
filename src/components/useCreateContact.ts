@@ -3,16 +3,16 @@ import { createContact } from "../services/apiContact";
 import toast from "react-hot-toast";
 
 export function useCreateContact() {
-  const { mutate: createData } = useMutation({
+  const { mutate: createData, isLoading }: any = useMutation({
     mutationFn: createContact,
 
     onSuccess: () => {
-      toast.success("Successfully sent!")
+      toast.success("Successfully sent!");
     },
     onError: () => {
-      toast.error("Error")
-    }
+      toast.error("Error");
+    },
   });
 
-  return { createData }
+  return { createData, isLoading };
 }
