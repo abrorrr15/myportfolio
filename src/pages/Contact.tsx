@@ -13,9 +13,7 @@ import {
 } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { useCreateContact } from "../components/useCreateContact";
-import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-import Loading from "../components/Loading";
 
 type ContactFormInputs = {
   name: string;
@@ -57,7 +55,6 @@ function Contact() {
     );
   }
 
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -96,7 +93,7 @@ function Contact() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="text-3xl font-medium text-white mb-5 fade-in2">
-          {t('contactForm')}
+          {t("contactForm")}
         </h1>
         <div className="grid grid-cols-2 gap-4 w-full max-w-md">
           {/* Form inputs */}
@@ -108,7 +105,7 @@ function Contact() {
               <span>
                 <IoInformationCircleOutline className="text-red-500" />
               </span>
-              {t('name')}
+              {t("name")}
             </label>
             <input
               type="text"
@@ -123,7 +120,7 @@ function Contact() {
           {/* Other input fields */}
           <div className="fade-in2">
             <label htmlFor="phone" className="text-gray-300">
-              {t('phone')}
+              {t("phone")}
             </label>
             <input
               type="text"
@@ -141,7 +138,7 @@ function Contact() {
               <span>
                 <IoInformationCircleOutline className="text-red-500" />
               </span>
-              {t('email')}
+              {t("email")}
             </label>
             <input
               type="email"
@@ -161,7 +158,7 @@ function Contact() {
               <span>
                 <IoInformationCircleOutline className="text-red-500" />
               </span>
-              {t('message')}
+              {t("message")}
             </label>
             <textarea
               rows={3}
@@ -174,18 +171,17 @@ function Contact() {
           </div>
           <div className="col-span-2 fade-in2">
             <button
-            disabled={isLoading}
+              disabled={isLoading}
               type="submit"
               className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 fade-in2"
             >
-              {t('submit')}
+              {t("submit")}
             </button>
             <button
-
               onClick={toggleContactDetails}
               className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded ml-4 fade-in2"
             >
-              {t('showContactDetails')}
+              {t("showContactDetails")}
             </button>
           </div>
         </div>
@@ -198,10 +194,10 @@ function Contact() {
             className="text-red-500 mt-3 cursor-pointer"
             onClick={toggleContactForm}
           >
-            &larr; <b>{t('returnToContactForm')}</b>
+            &larr; <b>{t("returnToContactForm")}</b>
           </div>
           <h1 className="text-red-300 font-bold text-3xl my-5 mx-3">
-            {t('myContactDetails')}
+            {t("myContactDetails")}
           </h1>
           <div className="grid grid-cols-2 gap-5 bg-[#ffffff74] p-5 rounded-md">
             {/* First Column */}
@@ -226,7 +222,7 @@ function Contact() {
             <div>
               <p className="flex items-center select-none mb-3">
                 <BiFlag className="mr-2" />
-                <span>{t('uzbekistan')}</span>
+                <span>{t("uzbekistan")}</span>
               </p>
               <hr className="w-full my-2" />
               <p className="flex items-center gap-4 mb-3 select-none">
@@ -275,7 +271,7 @@ function Contact() {
                   onClick={handleDownload}
                   className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded"
                 >
-                  {t('downloadCV')}
+                  {t("downloadCV")}
                 </button>
               </div>
             </div>
