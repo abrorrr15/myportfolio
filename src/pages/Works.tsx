@@ -1049,7 +1049,7 @@ function Works() {
             onClick={() => handleToggle("9")}
           >
             <SwiperSlide>
-              <img src="nextjs.jpg" alt="#2" className="m-3 " />
+              <img src="react_next.jpg" alt="#2" className="m-3 " />
 
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
@@ -1057,7 +1057,7 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="nextjs.jpg" alt="#2" className="m-3" />
+              <img src="react_next.jpg" alt="#2" className="m-3" />
 
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
@@ -1065,7 +1065,7 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="nextjs.jpg" alt="#2" className="m-3" />
+              <img src="react_next.jpg" alt="#2" className="m-3" />
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
                 <span>Soon</span>
