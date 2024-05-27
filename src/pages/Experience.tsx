@@ -6,7 +6,6 @@ import {
   FaNodeJs,
   FaReact,
   FaSass,
-  FaVuejs,
 } from "react-icons/fa";
 
 import {
@@ -244,7 +243,7 @@ function Experience() {
             </label>
             <div className="flex gap-10 mt-5">
               <RiNextjsFill size={50} className="text-black" />
-              <FaVuejs size={50} className="text-green-500" />
+              
             </div>
           </div>
           <br />
