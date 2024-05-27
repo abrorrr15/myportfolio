@@ -24,7 +24,6 @@ import {
 
 import { useEffect, useRef } from "react";
 import { PiStudentFill } from "react-icons/pi";
-import { VscTerminal } from "react-icons/vsc";
 import Logo from "../components/Logo";
 import { IoIosSchool } from "react-icons/io";
 import { MdInfoOutline, MdWork } from "react-icons/md";
@@ -207,7 +206,6 @@ function Experience() {
               <RiSupabaseFill size={50} className="text-[green]" />
               <SiNetlify size={50} className="text-[#00FFFF]" />
               <SiCodesandbox size={50} className="bg-gray-200" />
-              <VscTerminal size={50} className="bg-gray-200 rounded-[10px]" />
             </div>
           </div>
           <hr className="border-gray-800" />
@@ -217,7 +215,10 @@ function Experience() {
               {t("Other Skills:")}
             </label>
             <p className="w-full bg-zinc-400 text-white border-none rounded-[5px] p-2 text-lg">
-              <b className="text-green-500">{t("English C1")}</b>, {t("Problem-solving, Team collaboration, Friendly, Polite, Tolerable, Cognitive thinking, Thankful and etc.")}
+              <b className="text-green-500">{t("English C1")}</b>,{" "}
+              {t(
+                "Problem-solving, Team collaboration, Friendly, Polite, Tolerable, Cognitive thinking, Thankful and etc."
+              )}
             </p>
           </div>
         </div>
@@ -233,7 +234,7 @@ function Experience() {
               {t("Current Learning:")}
             </label>
             <div className="flex gap-10 mt-5">
-              <FaNodeJs size={50} className="text-green-600" />
+              <RiNextjsFill size={50} className="text-black" />
             </div>
           </div>
           <hr className="border-gray-800" />
@@ -242,8 +243,7 @@ function Experience() {
               {t("Planning to Learn:")}
             </label>
             <div className="flex gap-10 mt-5">
-              <RiNextjsFill size={50} className="text-black" />
-              
+              <FaNodeJs size={50} className="text-green-600" />
             </div>
           </div>
           <br />
