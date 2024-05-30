@@ -163,10 +163,10 @@ function Experience() {
       </main>
 
       <section className="px-8 md:px-32 mt-12 text-start fade-in">
-        <h1 className="text-4xl font-bold mb-8">{t("skills")}</h1>
+        <h1 className="text-4xl font-bold mb-8 text-gray-300">{t("skills")}</h1>
         <div className="space-y-5">
           <div>
-            <label className="block font-semibold text-xl mb-1">
+            <label className="block font-semibold text-xl mb-1 text-gray-300">
               {t("Programming Languages:")}
             </label>
             <div className="flex gap-10 mt-5">
@@ -177,7 +177,7 @@ function Experience() {
           </div>
           <hr className="border-gray-800" />
           <div>
-            <label className="block font-semibold text-xl mb-1">
+            <label className="block font-semibold text-xl mb-1 text-gray-300">
               {t("Frameworks & Libraries:")}
             </label>
             <div className="flex gap-10 mt-5">
@@ -198,7 +198,7 @@ function Experience() {
           </div>
           <hr className="border-gray-800" />
           <div>
-            <label className="block font-semibold text-xl mb-1">
+            <label className="block font-semibold text-xl mb-1 text-gray-300">
               {t("Tools & Platforms:")}
             </label>
             <div className="flex gap-10 mt-5">
@@ -210,7 +210,7 @@ function Experience() {
           </div>
           <hr className="border-gray-800" />
           <div>
-            <label className="flex items-center gap-1 font-semibold text-xl mb-1">
+            <label className="flex items-center gap-1 font-semibold text-xl mb-1 text-gray-300">
               <MdInfoOutline />
               {t("Other Skills:")}
             </label>
@@ -224,22 +224,22 @@ function Experience() {
         </div>
       </section>
 
-      <section className="px-8 md:px-32 mt-12 text-start fade-in">
-        <h1 className="text-4xl font-bold mb-8">
+      <section className="px-8 md:px-32 mt-12 text-start fade-in ">
+        <h1 className="text-4xl font-bold mb-8 text-gray-300">
           {t("Currently Learning / Planning to Learn")}
         </h1>
         <div className="space-y-5">
           <div>
-            <label className="block font-semibold text-xl mb-1">
+            <label className="block font-semibold text-xl mb-1 text-gray-300">
               {t("Current Learning:")}
             </label>
             <div className="flex gap-10 mt-5">
-              <RiNextjsFill size={50} className="text-black" />
+              <RiNextjsFill size={50} className="text-black bg-gray-200 rounded-[50%]" />
             </div>
           </div>
           <hr className="border-gray-800" />
           <div>
-            <label className="block font-semibold text-xl mb-1">
+            <label className="block font-semibold text-xl mb-1 text-gray-300">
               {t("Planning to Learn:")}
             </label>
             <div className="flex gap-10 mt-5">

@@ -5,11 +5,11 @@
 /* styles.css */
 .mixed-background {
   background-image: linear-gradient(
-      to right,
-      rgba(111, 183, 255, 0.745),
-      rgba(97, 84, 238, 0.608)
+      360deg,
+      rgba(0, 5, 14, 0.913),
+      rgba(0, 0, 0, 0.867)
     ),
-    url("/fon.jpg");
+    url("/logo.png");
   background-size: cover;
   background-position: center;
 }
@@ -74,4 +74,3 @@
   font-weight: bold;
   cursor: pointer;
 }
-

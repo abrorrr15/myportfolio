@@ -31,8 +31,8 @@ function Contact() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/cv.pdf";
-    link.download = "My_CV.pdf";
+    link.href = "/CV.doc";
+    link.download = "My_CV.doc";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -209,7 +209,7 @@ function Contact() {
               <hr className="w-full my-2" />
               <p className="flex items-center mb-3">
                 <BiPhone className="mr-2" />
-                <span className="select-all">+998-33-443-15-12</span>
+                <span className="select-all">+998-33-__-__</span>
               </p>
               <hr className="w-full my-2" />
               <p className="flex items-center">

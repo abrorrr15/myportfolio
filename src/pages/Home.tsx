@@ -38,8 +38,6 @@ function Home() {
       className="flex flex-col justify-center overflow-scroll custom-scrollbar h-screen pl-20 select-none"
       ref={contentRef}
     >
-      <Logo />
-      <br />
       <p className="font-medium text-6xl mb-2 text-green-500 fade-in">
         {t("Hi, my name is")}
       </p>
@@ -52,7 +50,7 @@ function Home() {
       <p className="text-xl mb-4 max-w-4xl text-green-200 fade-in">
         {t("I am a Front-end developer specializing in building client-side websites with logic. Currently, I am looking for opportunities in this field!")}
       </p>
-      <p className="font-bold fade-in">
+      <p className="font-bold fade-in text-gray-300">
         {t("If you are interested in my works,")}{" "}
         <span
           className="text-red-600 text-2xl cursor-pointer font-normal"
