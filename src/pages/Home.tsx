@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
-import Logo from "../components/Logo";
 import { useTranslation } from "react-i18next";
 
 function Home() {
