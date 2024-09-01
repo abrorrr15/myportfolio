@@ -44,12 +44,12 @@ function Home() {
         {t("AbrorXoliqov")}.<span className="animate-blink">|</span>
       </p>
       <p className="text-5xl mb-4 text-gray-300 fade-in">
-        {t("I build client-side servers.")}
+        {t("I build full-stack applications.")}
       </p>
       <p className="text-xl mb-4 max-w-4xl text-green-200 fade-in">
-        {t("I am a Front-end developer specializing in building client-side websites with logic. Currently, I am looking for opportunities in this field!")}
+        {t("I am a Full-stack developer specializing in building websites for your business. Currently, I am looking for opportunities in this field!")}
       </p>
-      <p className="font-bold fade-in text-gray-300">
+      <p className="font-bol  d fade-in text-gray-300">
         {t("If you are interested in my works,")}{" "}
         <span
           className="text-red-600 text-2xl cursor-pointer font-normal"

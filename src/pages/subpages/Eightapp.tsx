@@ -88,7 +88,7 @@ function Eightapp() {
           <br />
           <p className="text-lg text-gray-800 mb-6">
             {t(
-              "I need a job which is connected with front-end development. So,I created my first portfolio website, I hope you liked it. I can understand if it seems too simple or with bags (if you notice any, you can leave a message in contact form). From this project, I strenghtened skills at"
+              "I need a job which is connected with full-stack development. So,I created my first portfolio website, I hope you liked it. I can understand if it seems too simple or with bags (if you notice any, you can leave a message in contact form). From this project, I strenghtened skills at"
             )}{" "}
             <b>
               React query library, styled-components, recharts and {t("much more")}

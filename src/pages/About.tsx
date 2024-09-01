@@ -59,7 +59,7 @@ function About() {
             {t("hiIm")} <b>{t("AbrorXoliqov")}</b>,{" "}
             {t("apassionatesoftwareengineer")}{" "}
             <b>
-              <i>(front-end {t("developer")})</i>
+              <i>(full-stack {t("developer")})</i>
             </b>{" "}
             {t(
               "withastrongbackgroundinwebdevelopmentandakeeninterestinnewtechnologies."
@@ -133,7 +133,7 @@ function About() {
           </h1>
           <p className="lg:text-lg 2xl:text-md">
             {t(
-              "I am proficient in HTML, CSS, JavaScript, and have experience with frameworks and libraries like React, Redux and React-query. I am also familiar with TypeScript, Git, and various development tools."
+              "I am proficient in HTML, CSS, and JavaScript, with extensive experience in modern frameworks and libraries such as React, Redux, and React Query. I am also skilled in TypeScript, Git, and various development tools. Additionally, I have strong expertise in backend development with PHP, particularly using the Laravel framework, allowing me to build full-stack applications efficiently."
             )}
           </p>
         </section>
@@ -144,7 +144,7 @@ function About() {
           </h1>
           <p className="lg:text-lg 2xl:text-md">
             {t(
-              "Currently, I am working on several personal projects, exploring new technologies like Vue.js and Next js, and contributing to open source projects."
+              "Currently, I am working on several personal projects, exploring new features of PHP and its frameworks, and contributing to open source projects."
             )}
           </p>
         </section>

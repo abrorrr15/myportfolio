@@ -10,7 +10,7 @@ import {
   FaExternalLinkAlt,
   FaHtml5,
   FaJs,
-  FaNodeJs,
+  FaPhp,
   FaReact,
   FaSass,
 } from "react-icons/fa";
@@ -21,14 +21,11 @@ import {
   SiStyledcomponents,
   SiTypescript,
 } from "react-icons/si";
-import {
-  RiNextjsFill,
-  RiSupabaseFill,
-  RiTailwindCssFill,
-} from "react-icons/ri";
+import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import Logo from "../components/Logo";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
+import { FaLaravel } from "react-icons/fa6";
 
 function Works() {
   const { t } = useTranslation();
@@ -571,7 +568,6 @@ function Works() {
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 {" "}
-             
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
                   size={40}
@@ -589,7 +585,10 @@ function Works() {
               className="bg-[#ffffff80] text-gray-800 bg-opacity-90 p-2 rounded-lg shadow-md ml-3"
               onClick={() => handleToggle("5")}
             >
-              <p className="font-bold text-center mb-2">   {t("Languages & Techs used")}:</p>
+              <p className="font-bold text-center mb-2">
+                {" "}
+                {t("Languages & Techs used")}:
+              </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
                   <FaHtml5 className="text-red-500 mr-1" size={20} />
@@ -765,7 +764,7 @@ function Works() {
               onClick={() => handleToggle("6")}
             >
               <p className="font-bold text-center mb-2">
-              {t("Languages & Techs used")}:
+                {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
@@ -884,7 +883,7 @@ function Works() {
               onClick={() => handleToggle("7")}
             >
               <p className="font-bold text-center mb-2">
-              {t("Languages & Techs used")}:
+                {t("Languages & Techs used")}:
               </p>
               <div className="grid grid-cols-2">
                 <div className="flex items-center">
@@ -900,23 +899,30 @@ function Works() {
                   <span className="mr-2">JavaScript</span>
                 </div>
                 <div className="flex items-center">
-                  <FaReact className="text-[#0088ff] mr-1" size={20} />
-                  <span className="mr-2">React js</span>
+                  <FaPhp className="text-purple-600 mr-1" size={20} />
+                  <span className="mr-2">PHP</span>
                 </div>
                 <div className="flex items-center">
-                  <SiStyledcomponents
-                    className="text-[#db7093] mr-1"
-                    size={30}
-                  />
-                  <span className="mr-2">Styled-components</span>
+                  <SiTypescript className="text-[#002fff] mr-1" size={20} />
+                  <span className="mr-2">React TS</span>
                 </div>
                 <div className="flex items-center">
                   <SiRedux className="text-[#ff4444] mr-1" size={20} />
                   <span className="mr-2">React query</span>
                 </div>
-                <div className="flex items-center col-span-2">
-                  <RiSupabaseFill className="text-[green] mr-1" size={20} />
-                  <span className="mr-2">Supabase (back-end)</span>
+                <div className="flex items-center">
+                  <RiTailwindCssFill
+                    className="text-[#007180] mr-1"
+                    size={20}
+                  />
+                  <span className="mr-2">Tailwind CSS</span>
+                </div>
+                <div className="flex items-center">
+                  <FaLaravel
+                    className="bg-white text-red-500 rounded-[50%] mr-1"
+                    size={20}
+                  />
+                  <span className="mr-2">Laravel</span>
                 </div>
               </div>
             </div>
@@ -1049,7 +1055,7 @@ function Works() {
             onClick={() => handleToggle("9")}
           >
             <SwiperSlide>
-              <img src="react_next.jpg" alt="#2" className="m-3 " />
+              <img src="react_next.png" alt="#2" className="m-3 w-full" />
 
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
@@ -1057,7 +1063,7 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="react_next.jpg" alt="#2" className="m-3" />
+              <img src="react_next.png" alt="#2" className="m-3 w-full" />
 
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
@@ -1065,7 +1071,7 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="react_next.jpg" alt="#2" className="m-3" />
+              <img src="react_next.png" alt="#2" className="m-3 w-full" />
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
                 <span>Soon</span>
@@ -1097,15 +1103,12 @@ function Works() {
                   <span className="mr-2">JavaScript</span>
                 </div>
                 <div className="flex items-center">
-                  <SiTypescript className="text-[#002fff] mr-1" size={20} />
-                  <span className="mr-2">React TS</span>
+                  <FaPhp className="text-purple-600 mr-1" size={20} />
+                  <span className="mr-2">PHP</span>
                 </div>
                 <div className="flex items-center">
-                  <SiStyledcomponents
-                    className="text-[#db7093] mr-1"
-                    size={30}
-                  />
-                  <span className="mr-2">Styled-components</span>
+                  <SiTypescript className="text-[#002fff] mr-1" size={20} />
+                  <span className="mr-2">React TS</span>
                 </div>
                 <div className="flex items-center">
                   <SiRedux className="text-[#ff4444] mr-1" size={20} />
@@ -1119,15 +1122,11 @@ function Works() {
                   <span className="mr-2">Tailwind CSS</span>
                 </div>
                 <div className="flex items-center">
-                  <RiNextjsFill
-                    className="bg-white text-[#000000] rounded-[50%] mr-1"
+                  <FaLaravel
+                    className="bg-white text-red-500 rounded-[50%] mr-1"
                     size={20}
                   />
-                  <span className="mr-2">Next JS</span>
-                </div>
-                <div className="flex items-center col-span-2">
-                  <FaNodeJs className="text-[#76ff7f] mr-1" size={20} />
-                  <span className="mr-2">Node JS (back-end)</span>
+                  <span className="mr-2">Laravel</span>
                 </div>
               </div>
             </div>
