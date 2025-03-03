@@ -4,7 +4,7 @@ import calculator from "./images/calculator.png";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { FaGithub, FaLink } from "react-icons/fa";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function Firstapp() {
   const { t } = useTranslation();
@@ -39,42 +39,62 @@ function Firstapp() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-400 to-purple-600 text-white">
+    <div className="z-10 min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-400 to-purple-600 text-white">
       {/* Header */}
-      <header className="flex items-center justify-between w-full px-4 py-6 md:px-12 lg:px-24 xl:px-32">
+      <header className="flex items-center justify-between w-[95%] px-4 py-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
-          <span className="ml-2 text-3xl font-medium">
-            {t('headerTitle')}
+          <span className="ml-2 text-xl md:text-3xl font-medium">
+            {t("headerTitle")}
           </span>
         </div>
-        <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
+        <img
+          src={logo}
+          alt="logo"
+          className="rounded-full w-12 h-12 md:w-16 md:h-16"
+        />
       </header>
 
       {/* Main content */}
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-gray-700 rounded-xl shadow-lg p-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
-            {t('mainTitle')}
+            {t("mainTitle")}
           </h1>
-          <p className="text-lg text-gray-800 mb-6" dangerouslySetInnerHTML={{ __html: t('description') }}>
-          </p>
+          <p
+            className="text-lg text-gray-800 mb-6"
+            dangerouslySetInnerHTML={{ __html: t("description") }}
+          ></p>
           <img
             src={calculator}
             alt="Calculator"
             className="mx-auto mb-8 rounded-lg shadow-md"
           />
-          <a href="https://calculator-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4">{t('tryAppLink')} <FaLink /></a>
+          <a
+            href="https://calculator-portfolio.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-blue-400 hover:underline hover:underline-offset-4"
+          >
+            {t("tryAppLink")} <FaLink />
+          </a>
           <br />
           <p className="text-lg text-gray-800 mb-6">
-            {t('featuresDescription')}
+            {t("featuresDescription")}
           </p>
           <p className="text-lg text-gray-800 mb-6">
-            <h4>{t('codeTitle')}</h4><br />
-            <p onClick={() => setToggle(d => !d)} className="cursor-pointer text-blue-600">{t('clickToSeeCode')}&darr;</p>
+            <h4>{t("codeTitle")}</h4>
+            <br />
+            <p
+              onClick={() => setToggle((d) => !d)}
+              className="cursor-pointer text-blue-600"
+            >
+              {t("clickToSeeCode")}&darr;
+            </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto">
-              {toggle && <code>
-                {`
+              {toggle && (
+                <code>
+                  {`
 import { useReducer, useState } from 'react';
 import './calculator.css';
 
@@ -169,16 +189,20 @@ function Calculator() {
   );
 }
                 `}
-              </code>}
+                </code>
+              )}
             </pre>
             <a
-            href="https://github.com/abrorrr15/calculator"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
-          >
-            {t('checkCodeLink')} <span><FaGithub size={25} className="text-black"/></span>
-          </a>
+              href="https://github.com/abrorrr15/calculator"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
+            >
+              {t("checkCodeLink")}{" "}
+              <span>
+                <FaGithub size={25} className="text-black" />
+              </span>
+            </a>
           </p>
         </div>
       </div>
@@ -188,7 +212,7 @@ function Calculator() {
         className="absolute top-4 right-4 px-4 py-2 text-lg bg-white text-gray-800 rounded-lg shadow-md hover:bg-gray-200 duration-300 font-mono"
         onClick={() => navigate(-1)}
       >
-        &larr; {t('backButton')}
+        &larr; {t("backButton")}
       </button>
     </div>
   );

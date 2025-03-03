@@ -43,23 +43,23 @@ function Thirdapp() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-400 to-purple-600 text-white">
+    <div className="z-10 min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-400 to-purple-600 text-white">
       {/* Header */}
-      <header className="flex items-center justify-between w-full px-4 py-6 md:px-12 lg:px-24 xl:px-32">
+      <header className="flex items-center justify-between w-[95%] px-4 py-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex items-center">
           <AiOutlineAppstore size={30} className="text-red-500" />
-          <span className="ml-2 text-3xl font-medium">{t("headerTitle3")}</span>
+          <span className="ml-2 text-xl md:text-3xl font-medium">{t("headerTitle3")}</span>
         </div>
-        <img src={logo} alt="logo" className="rounded-full w-16 h-16" />
+        <img src={logo} alt="logo" className="rounded-full w-12 h-12 md:w-16 md:h-16" />
       </header>
 
       {/* Main content */}
       <div className="flex-1 mt-8 px-4 py-8 md:px-12 lg:px-24 xl:px-32">
-        <div className="bg-white rounded-xl shadow-lg p-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8">
+        <div className="bg-gray-700 rounded-xl shadow-lg p-8">
+          <h1 className="text-xl md:text-3xl font-bold text-gray-200 mb-8">
             {t("blogAppNumber3")}
           </h1>
-          <p className="text-lg text-gray-800 mb-6">
+          <p className="text-sm md:text-lg text-gray-300 mb-6">
             {t("description3")} <b className="text-red-500">{t("reactJs")}</b>
           </p>
           <Swiper
@@ -70,7 +70,7 @@ function Thirdapp() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className="w-[800px] mb-3 rounded-lg shadow-md"
+            className="w-[50vw] mb-3 rounded-lg shadow-md"
           >
             <SwiperSlide>
               <img src={atomicDayIntro} alt="film" />
@@ -91,7 +91,7 @@ function Thirdapp() {
             {t("tryAppLink")} <FaLink />
           </a>
           <br />
-          <p className="text-lg text-gray-800 mb-6">
+          <p className="text-sm md:text-lg text-gray-300 mb-6">
             {t("discoverProject")} <b>Redux library, Tailwind and {t("much more")}</b>!
           </p>
 
@@ -99,11 +99,11 @@ function Thirdapp() {
             href="https://github.com/abrorrr15/blog"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 cursor-pointer text-red-600 hover:underline hover:underline-offset-4"
+            className="flex items-center gap-3 cursor-pointer text-red-500 hover:underline hover:underline-offset-4"
           >
             {t("githubLinkText")}{" "}
             <span>
-              <FaGithub size={25} className="text-black" />
+              <FaGithub size={25} className="text-black bg-white rounded-full" />
             </span>
           </a>
         </div>
@@ -111,7 +111,7 @@ function Thirdapp() {
 
       {/* Back button */}
       <button
-        className="absolute top-4 right-4 px-4 py-2 text-lg bg-white text-gray-800 rounded-lg shadow-md hover:bg-gray-200 duration-300 font-mono"
+        className="absolute top-4 right-4 px-4 py-2 text-sm md:text-lg bg-gray-200 opacity-90 text-gray-800 rounded-lg shadow-md hover:bg-gray-200 duration-300 font-mono"
         onClick={() => navigate(-1)}
       >
         {t("backButtonText")}

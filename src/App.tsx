@@ -8,15 +8,15 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Messages from "./pages/Messages";
-import Firstapp from "./pages/subpages/Firstapp";
-import Secondapp from "./pages/subpages/Secondapp";
-import Thirdapp from "./pages/subpages/Thirdapp";
-import Fourthapp from "./pages/subpages/Fourthapp";
-import Fifthapp from "./pages/subpages/Fifthapp";
-import Sixapp from "./pages/subpages/Sixapp";
-import Sevenapp from "./pages/subpages/Sevenapp";
-import Eightapp from "./pages/subpages/Eightapp";
-import Nineapp from "./pages/subpages/Nineapp";
+// import Firstapp from "./pages/subpages/Firstapp";
+// import Secondapp from "./pages/subpages/Secondapp";
+// import Thirdapp from "./pages/subpages/Thirdapp";
+// import Fourthapp from "./pages/subpages/Fourthapp";
+// import Fifthapp from "./pages/subpages/Fifthapp";
+// import Sixapp from "./pages/subpages/Sixapp";
+// import Sevenapp from "./pages/subpages/Sevenapp";
+// import Eightapp from "./pages/subpages/Eightapp";
+// import Nineapp from "./pages/subpages/Nineapp";
 import { Toaster } from "react-hot-toast";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -35,7 +35,7 @@ function App() {
             <Route path="experience" element={<Experience />} />
             <Route path="contact" element={<Contact />} />
 
-            <Route path="project/1" element={<Firstapp />} />
+            {/* <Route path="project/1" element={<Firstapp />} />
             <Route path="project/2" element={<Secondapp />} />
             <Route path="project/3" element={<Thirdapp />} />
             <Route path="project/4" element={<Fourthapp />} />
@@ -43,7 +43,7 @@ function App() {
             <Route path="project/6" element={<Sixapp />} />
             <Route path="project/7" element={<Sevenapp />} />
             <Route path="project/8" element={<Eightapp />} />
-            <Route path="project/9" element={<Nineapp />} />
+            <Route path="project/9" element={<Nineapp />} /> */}
           </Route>
           <Route path="20005" element={<Messages />} />
           <Route path="*" element={<PageNotFound />} />

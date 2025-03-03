@@ -23,13 +23,12 @@ import {
 } from "react-icons/si";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import Logo from "../components/Logo";
-import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { FaLaravel } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Works() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState<string | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
 
@@ -195,100 +194,6 @@ function Works() {
             navigation={false}
             modules={[Autoplay, Pagination, Navigation]}
             className="w-full"
-            onClick={() => handleToggle("2")}
-          >
-            <SwiperSlide>
-              <div>
-                <img
-                  src="film-intro.png"
-                  alt="#2"
-                  className="m-3 w-full relative"
-                  loading="lazy"
-                />
-                <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                  <FaExternalLinkAlt
-                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                    size={40}
-                    onClick={() => navigate("/project/2")}
-                  />
-                </span>
-              </div>
-
-              <p className="swiper-slide-title ml-3">Film</p>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div>
-                <img
-                  src="film-search.png"
-                  alt="#2"
-                  className="m-3 w-full relative"
-                  loading="lazy"
-                />
-                <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                  <FaExternalLinkAlt
-                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                    size={40}
-                    onClick={() => navigate("/project/2")}
-                  />
-                </span>
-              </div>
-
-              <p className="swiper-slide-title ml-3">Film</p>
-            </SwiperSlide>
-            <br />
-
-            <div
-              style={{
-                opacity: `${isOpen === "2" ? "1" : "0"}`,
-                transition: "all .5s",
-              }}
-              className="bg-[#ffffff80] text-gray-800 bg-opacity-90 p-2 rounded-lg shadow-md ml-3"
-              onClick={() => handleToggle("2")}
-            >
-              <p className="font-bold text-center mb-2">
-                {t("Languages & Techs used")}:
-              </p>
-              <div className="grid grid-cols-2">
-                <div className="flex items-center">
-                  <FaHtml5 className="text-red-500 mr-1" size={20} />
-                  <span className="mr-2">HTML</span>
-                </div>
-                <div className="flex items-center">
-                  <FaCss3 className="text-blue-600 mr-1" size={20} />
-                  <span className="mr-2">CSS</span>
-                </div>
-                <div className="flex items-center">
-                  <FaJs className="text-yellow-400 mr-1" size={20} />
-                  <span className="mr-2">JavaScript</span>
-                </div>
-                <div className="flex items-center">
-                  <FaReact className="text-[#0088ff] mr-1" size={20} />
-                  <span className="mr-2">React js</span>
-                </div>
-                <div className="flex items-center col-span-2">
-                  <SiStyledcomponents
-                    className="text-[#db7093] mr-1"
-                    size={30}
-                  />
-                  <span className="mr-2">Styled-components</span>
-                </div>
-              </div>
-            </div>
-          </Swiper>
-        </div>
-
-        <div className="fade-in">
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            navigation={false}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="w-full"
             onClick={() => handleToggle("3")}
           >
             <SwiperSlide>
@@ -299,11 +204,12 @@ function Works() {
                   className="m-3 w-full relative"
                 />
                 <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                  <FaExternalLinkAlt
-                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                    size={40}
-                    onClick={() => navigate("/project/3")}
-                  />
+                  <Link to="https://abror-blog.netlify.app/">
+                    <FaExternalLinkAlt
+                      className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                      size={40}
+                    />
+                  </Link>
                 </span>
               </div>
 
@@ -317,11 +223,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/3")}
-                />
+                <Link to="https://abror-blog.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Search blogs</p>
             </SwiperSlide>
@@ -333,11 +240,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/3")}
-                />
+                <Link to="https://abror-blog.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Dark Mode</p>
             </SwiperSlide>
@@ -407,11 +315,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/4")}
-                />
+                <Link to="https://abror-hangman.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Hangman Game</p>
             </SwiperSlide>
@@ -471,11 +380,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/5")}
-                />
+                <Link to="https://worldwise-projects.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">World Wise app</p>
             </SwiperSlide>
@@ -487,11 +397,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/5")}
-                />
+                <Link to="https://worldwise-projects.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Security</p>
             </SwiperSlide>
@@ -503,11 +414,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/5")}
-                />
+                <Link to="https://worldwise-projects.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Info about</p>
             </SwiperSlide>
@@ -519,11 +431,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/5")}
-                />
+                <Link to="https://worldwise-projects.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Map</p>
             </SwiperSlide>
@@ -536,11 +449,12 @@ function Works() {
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 {" "}
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/5")}
-                />
+                <Link to="https://worldwise-projects.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Prices</p>
             </SwiperSlide>
@@ -610,11 +524,12 @@ function Works() {
                 loading="lazy"
               />{" "}
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Hotel guests app</p>
             </SwiperSlide>
@@ -626,11 +541,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Security</p>
             </SwiperSlide>
@@ -642,11 +558,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Bookings</p>
             </SwiperSlide>
@@ -658,11 +575,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Cabins</p>
             </SwiperSlide>
@@ -674,11 +592,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Dark mode</p>
             </SwiperSlide>
@@ -690,11 +609,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Charts</p>
             </SwiperSlide>
@@ -706,11 +626,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Create user</p>
             </SwiperSlide>
@@ -722,11 +643,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">
                 Create cabins / bookings
@@ -740,11 +662,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Checkin</p>
             </SwiperSlide>
@@ -756,11 +679,12 @@ function Works() {
                 loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/6")}
-                />
+                <Link to="https://hotel-guests-app.netlify.app/">
+                  <FaExternalLinkAlt
+                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
+                    size={40}
+                  />
+                </Link>
               </span>
               <p className="swiper-slide-title ml-3">Details</p>
             </SwiperSlide>
@@ -833,13 +757,7 @@ function Works() {
                 className="m-3 w-full"
                 loading="lazy"
               />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/7")}
-                />
-              </span>
+              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm"></span>
               <p className="swiper-slide-title ml-3">
                 Docs project for ETC company
               </p>
@@ -851,13 +769,7 @@ function Works() {
                 className="m-3 w-full"
                 loading="lazy"
               />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/7")}
-                />
-              </span>
+              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm"></span>
               <p className="swiper-slide-title ml-3">Docs table</p>
             </SwiperSlide>
             <SwiperSlide>
@@ -867,13 +779,7 @@ function Works() {
                 className="m-3 w-full"
                 loading="lazy"
               />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/7")}
-                />
-              </span>
+              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm"></span>
               <p className="swiper-slide-title ml-3">Document</p>
             </SwiperSlide>
             <SwiperSlide>
@@ -883,13 +789,7 @@ function Works() {
                 className="m-3 w-full"
                 loading="lazy"
               />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/7")}
-                />
-              </span>
+              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm"></span>
               <p className="swiper-slide-title ml-3">Charts</p>
             </SwiperSlide>
             <SwiperSlide>
@@ -899,13 +799,7 @@ function Works() {
                 className="m-3 w-full"
                 loading="lazy"
               />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/7")}
-                />
-              </span>
+              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm"></span>
               <p className="swiper-slide-title ml-3">Details</p>
             </SwiperSlide>
             <br />
@@ -958,129 +852,6 @@ function Works() {
                     size={20}
                   />
                   <span className="mr-2">Laravel</span>
-                </div>
-              </div>
-            </div>
-          </Swiper>
-        </div>
-        <div className="fade-in">
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            navigation={false}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="w-[100%]"
-            onClick={() => handleToggle("8")}
-          >
-            <SwiperSlide>
-              <img
-                src="portfolio-home.png"
-                alt="#2"
-                className="m-3 w-full"
-                loading="lazy"
-              />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/8")}
-                />
-              </span>
-              <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
-                <span>Portfolio website</span>
-              </p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="portfolio-works.png"
-                alt="#2"
-                className="m-3 w-full"
-                loading="lazy"
-              />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/8")}
-                />
-              </span>
-              <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
-                <span>Main page</span>
-              </p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="portfolio-contact.png"
-                alt="#2"
-                className="m-3 w-full"
-                loading="lazy"
-              />
-              <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                <FaExternalLinkAlt
-                  className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                  size={40}
-                  onClick={() => navigate("/project/8")}
-                />
-              </span>
-              <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
-                <span>Contact page</span>
-              </p>
-            </SwiperSlide>
-            <br />
-
-            <div
-              style={{
-                opacity: `${isOpen === "8" ? "1" : "0"}`,
-                transition: "all .5s",
-              }}
-              className="bg-[#ffffff80] text-gray-800 bg-opacity-90 p-2 rounded-lg shadow-md ml-3"
-              onClick={() => handleToggle("8")}
-            >
-              <p className="font-bold text-center mb-2">
-                Languages & Techs used:
-              </p>
-              <div className="grid grid-cols-2">
-                <div className="flex items-center">
-                  <FaHtml5 className="text-red-500 mr-1" size={20} />
-                  <span className="mr-2">HTML</span>
-                </div>
-                <div className="flex items-center">
-                  <FaCss3 className="text-blue-600 mr-1" size={20} />
-                  <span className="mr-2">CSS</span>
-                </div>
-                <div className="flex items-center">
-                  <FaJs className="text-yellow-400 mr-1" size={20} />
-                  <span className="mr-2">JavaScript</span>
-                </div>
-                <div className="flex items-center">
-                  <SiTypescript className="text-[#002fff] mr-1" size={20} />
-                  <span className="mr-2">React TS</span>
-                </div>
-                <div className="flex items-center">
-                  <SiStyledcomponents
-                    className="text-[#db7093] mr-1"
-                    size={30}
-                  />
-                  <span className="mr-2">Styled-components</span>
-                </div>
-                <div className="flex items-center">
-                  <SiRedux className="text-[#ff4444] mr-1" size={20} />
-                  <span className="mr-2">React query</span>
-                </div>
-                <div className="flex items-center">
-                  <RiSupabaseFill className="text-[green] mr-1" size={20} />
-                  <span className="mr-2">Supabase (back-end)</span>
-                </div>
-                <div className="flex items-center">
-                  <RiTailwindCssFill
-                    className="text-[#007180] mr-1"
-                    size={20}
-                  />
-                  <span className="mr-2">Tailwind CSS</span>
                 </div>
               </div>
             </div>

@@ -7,7 +7,7 @@ function Navbar() {
   const { i18n } = useTranslation();
 
   return (
-    <div className="lg:flex lg:flex-col xl:gap-20 gap-10 my-auto">
+    <div className="z-20 lg:flex lg:flex-col xl:gap-20 gap-10 my-auto">
       <div className="lg:flex lg:flex-col gap-10 items-end fixed top-[15%] right-0">
         <div className="flex flex-col gap-4 mr-4">
           <button

@@ -31,8 +31,8 @@ function Contact() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/CV.doc";
-    link.download = "My_CV.doc";
+    link.href = "/CV.pdf";
+    link.download = "CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -87,7 +87,7 @@ function Contact() {
     >
       {/* Contact Form */}
       <form
-        className={`flex flex-col items-center justify-center my-10 ${
+        className={`flex flex-col p-2 items-center justify-center my-10 ${
           isOpen ? "hidden" : ""
         }`}
         onSubmit={handleSubmit(onSubmit)}
@@ -95,61 +95,66 @@ function Contact() {
         <h1 className="text-3xl font-medium text-white mb-5 fade-in2">
           {t("contactForm")}
         </h1>
-        <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+        <div className="flex flex-col gap-4 w-full max-w-md">
           {/* Form inputs */}
-          <div className="fade-in2">
-            <label
-              htmlFor="name"
-              className="text-gray-300 gap-1 flex items-center"
-            >
-              <span>
-                <IoInformationCircleOutline className="text-red-500" />
-              </span>
-              {t("name")}
-            </label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Jhon"
-              {...register("name", {
-                required: t("This field is required") as string,
-              })}
-              className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="fade-in2">
+              <label
+                htmlFor="name"
+                className="text-gray-300 gap-1 flex items-center"
+              >
+                <span>
+                  <IoInformationCircleOutline className="text-red-500" />
+                </span>
+                {t("name")}
+              </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Jhon"
+                {...register("name", {
+                  required: t("This field is required") as string,
+                })}
+                className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            {/* Other input fields */}
+            <div className="fade-in2">
+              <label htmlFor="phone" className="text-gray-300">
+                {t("phone")}
+              </label>
+              <input
+                type="text"
+                id="phone"
+                placeholder="9981234567"
+                {...register("phone")}
+                className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
-          {/* Other input fields */}
-          <div className="fade-in2">
-            <label htmlFor="phone" className="text-gray-300">
-              {t("phone")}
-            </label>
-            <input
-              type="text"
-              id="phone"
-              placeholder="9981234567"
-              {...register("phone")}
-              className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <div className="grid grid-cols-1 gap-4">
+            <div className="fade-in2">
+              <label
+                htmlFor="email"
+                className="text-gray-300 flex items-center gap-1"
+              >
+                <span>
+                  <IoInformationCircleOutline className="text-red-500" />
+                </span>
+                {t("email")}
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="exmple@gmail.com"
+                {...register("email", {
+                  required: t("This field is required") as string,
+                })}
+                className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
-          <div className="fade-in2">
-            <label
-              htmlFor="email"
-              className="text-gray-300 flex items-center gap-1"
-            >
-              <span>
-                <IoInformationCircleOutline className="text-red-500" />
-              </span>
-              {t("email")}
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="exmple@gmail.com"
-              {...register("email", {
-                required: t("This field is required") as string,
-              })}
-              className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+
           <div className="col-span-2 fade-in2">
             <label
               htmlFor="message"
@@ -199,7 +204,7 @@ function Contact() {
           <h1 className="text-red-300 font-bold text-3xl my-5 mx-3">
             {t("myContactDetails")}
           </h1>
-          <div className="grid grid-cols-2 gap-5 bg-[#ffffff74] p-5 rounded-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-[#ffffff74] p-5 text-sm md:text-base rounded-md">
             {/* First Column */}
             <div>
               <p className="flex items-center select-none mb-3">
@@ -257,7 +262,7 @@ function Contact() {
                   />
                 </a>
                 <a
-                  href="https://tashkent.hh.uz/resume/e358610eff0d14b9e20039ed1f646f52526d70?hhtmFrom=resume_list"
+                  href="https://tashkent.hh.uz/resume/7e81e0a8ff0e3428390039ed1f7a73784f7862"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-red-600 px-2 rounded-[9px] text-white font-sans text-[1.1rem] font-[600]"
@@ -269,7 +274,7 @@ function Contact() {
               <div className="flex items-center mb-3">
                 <button
                   onClick={handleDownload}
-                  className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded"
+                  className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-1 md:px-3 py-1 rounded"
                 >
                   {t("downloadCV")}
                 </button>
