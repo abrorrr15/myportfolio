@@ -67,14 +67,14 @@ function Works() {
       ref={contentRef}
     >
       <header className="flex items-center justify-between text-white fade-in">
-        <div className="flex items-center m-[2em] mb-[1em] xl:mb-[1.3em] xl:m-[1.5em] 2xl:m-[1em] 2xl:mb-[1.5em] text-3xl font-medium text-white fade-in">
+        <div className="flex items-center m-[2em] mb-[1em] xl:mb-[1.3em] xl:m-[1.5em] 2xl:m-[1em] 2xl:mb-[1.5em] text-xl md:text-3xl font-medium text-white fade-in">
           <PiSuitcaseSimple size={35} />
           <span className="ml-2">{t("Projects / Portfolio")}</span>
         </div>
         <Logo />
       </header>
       <br />
-      <div className="flex items-center ml-3 mb-10 justify-around gap-2 bg-[#ffffff6c] shadow-lg">
+      <div className="grid grid-cols-5 md:flex items-center mx-2 mb-10 justify-around gap-2 bg-[#ffffff6c] shadow-lg">
         <a
           href="https://ru.wikipedia.org/wiki/HTML"
           target="_blank"
@@ -183,73 +183,7 @@ function Works() {
           />
         </a>
       </div>
-      <main className="grid grid-cols-3 grid-rows-subgrid gap-5 rounded-lg shadow-lg w-full">
-        <div className="fade-in">
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            navigation={false}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="w-full"
-            onClick={() => handleToggle("1")}
-          >
-            <SwiperSlide>
-              <div>
-                <img
-                  src="calculator.png"
-                  alt="#1"
-                  className="m-3 w-full relative"
-                />
-
-                <span className=" text-blue-600 absolute top-[30%] left-[50%] translate-x-[-50%] translate-y-[-25%] ml-3 w-full h-[9rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
-                  <FaExternalLinkAlt
-                    className="mx-auto my-auto hover:text-[skyblue] duration-300"
-                    size={40}
-                    onClick={() => navigate("/project/1")}
-                  />
-                </span>
-              </div>
-              <p className="swiper-slide-title ml-3">Calculator</p>
-              <br />
-
-              <div
-                style={{
-                  opacity: `${isOpen === "1" ? "1" : "0"}`,
-                  transition: "all .5s",
-                }}
-                className="bg-[#ffffff80] text-gray-800 bg-opacity-90 p-2 rounded-lg shadow-md m-3"
-                onClick={() => handleToggle("1")}
-              >
-                <p className="font-bold text-center mb-2">
-                  {t("Languages & Techs used")}:
-                </p>
-                <div className="grid grid-cols-2">
-                  <div className="flex items-center">
-                    <FaHtml5 className="text-red-500 mr-1" size={20} />
-                    <span className="mr-2">HTML</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaCss3 className="text-blue-600 mr-1" size={20} />
-                    <span className="mr-2">CSS</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaJs className="text-yellow-400 mr-1" size={20} />
-                    <span className="mr-2">JavaScript</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaReact className="text-[#0088ff] mr-1" size={20} />
-                    <span className="mr-2">React js</span>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-
+      <main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-subgrid gap-5 rounded-lg shadow-lg w-full">
         <div className="fade-in">
           <Swiper
             spaceBetween={30}
@@ -269,6 +203,7 @@ function Works() {
                   src="film-intro.png"
                   alt="#2"
                   className="m-3 w-full relative"
+                  loading="lazy"
                 />
                 <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                   <FaExternalLinkAlt
@@ -288,6 +223,7 @@ function Works() {
                   src="film-search.png"
                   alt="#2"
                   className="m-3 w-full relative"
+                  loading="lazy"
                 />
                 <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                   <FaExternalLinkAlt
@@ -374,7 +310,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Atomic Blog</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="atomic-search.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="atomic-search.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -389,6 +330,7 @@ function Works() {
                 src="atomic-nightintro.png"
                 alt="#2"
                 className="m-3 w-full"
+                loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
@@ -458,7 +400,12 @@ function Works() {
             onClick={() => handleToggle("4")}
           >
             <SwiperSlide>
-              <img src="hangman.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hangman.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -517,7 +464,12 @@ function Works() {
             onClick={() => handleToggle("5")}
           >
             <SwiperSlide>
-              <img src="worldwise-intro.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="worldwise-intro.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -528,7 +480,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">World Wise app</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="worldwise-form.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="worldwise-form.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -539,7 +496,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Security</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="worldwise-about.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="worldwise-about.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -550,7 +512,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Info about</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="worldwise-map.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="worldwise-map.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -565,6 +532,7 @@ function Works() {
                 src="worldwise-pricing.png"
                 alt="#2"
                 className="m-3 w-full"
+                loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 {" "}
@@ -635,7 +603,12 @@ function Works() {
             onClick={() => handleToggle("6")}
           >
             <SwiperSlide>
-              <img src="hotel-home.png" alt="#2" className="m-3 w-full" />{" "}
+              <img
+                src="hotel-home.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />{" "}
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -646,7 +619,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Hotel guests app</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-login.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-login.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -657,7 +635,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Security</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-bookings.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-bookings.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -668,7 +651,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Bookings</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-cabins.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-cabins.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -679,7 +667,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Cabins</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-dark.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-dark.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -690,7 +683,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Dark mode</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-stat.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-stat.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -701,7 +699,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Charts</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-user.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-user.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -716,6 +719,7 @@ function Works() {
                 src="hotel-createcabin.png"
                 alt="#2"
                 className="m-3 w-full"
+                loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
@@ -729,7 +733,12 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="hotel-checkin.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="hotel-checkin.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -744,6 +753,7 @@ function Works() {
                 src="hotel-detailsbookings.png"
                 alt="#2"
                 className="m-3 w-full"
+                loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
@@ -817,7 +827,12 @@ function Works() {
             onClick={() => handleToggle("7")}
           >
             <SwiperSlide>
-              <img src="real-project.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="real-project.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -830,7 +845,12 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="etc-main.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="etc-main.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -841,7 +861,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Docs table</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="etc-example.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="etc-example.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -852,7 +877,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Document</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="etc-stat.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="etc-stat.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -863,7 +893,12 @@ function Works() {
               <p className="swiper-slide-title ml-3">Charts</p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="etc-details.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="etc-details.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -942,7 +977,12 @@ function Works() {
             onClick={() => handleToggle("8")}
           >
             <SwiperSlide>
-              <img src="portfolio-home.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="portfolio-home.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -955,7 +995,12 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="portfolio-works.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="portfolio-works.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
                   className="mx-auto my-auto hover:text-[skyblue] duration-300"
@@ -972,6 +1017,7 @@ function Works() {
                 src="portfolio-contact.png"
                 alt="#2"
                 className="m-3 w-full"
+                loading="lazy"
               />
               <span className=" text-blue-600 absolute top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] ml-3 w-full h-[10rem] duration-300 opacity-0 hover:opacity-[1] hover:backdrop-blur-sm">
                 <FaExternalLinkAlt
@@ -1055,7 +1101,12 @@ function Works() {
             onClick={() => handleToggle("9")}
           >
             <SwiperSlide>
-              <img src="react_next.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="react_next.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
 
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
@@ -1063,7 +1114,12 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="react_next.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="react_next.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
 
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
@@ -1071,7 +1127,12 @@ function Works() {
               </p>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="react_next.png" alt="#2" className="m-3 w-full" />
+              <img
+                src="react_next.png"
+                alt="#2"
+                className="m-3 w-full"
+                loading="lazy"
+              />
               <p className="swiper-slide-title flex justify-center items-center flex-row gap-2 m-3">
                 <HiClock />
                 <span>Soon</span>

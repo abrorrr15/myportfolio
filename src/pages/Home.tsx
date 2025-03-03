@@ -34,25 +34,25 @@ function Home() {
 
   return (
     <div
-      className="flex flex-col justify-center overflow-scroll custom-scrollbar h-screen pl-20 select-none"
+      className="flex flex-col justify-center overflow-scroll custom-scrollbar h-screen pl-5 md:pl-20 select-none"
       ref={contentRef}
     >
-      <p className="font-medium text-6xl mb-2 text-green-500 fade-in">
+      <p className="font-medium text-xl md:text-3xl xl:text-6xl mb-2 text-green-500 fade-in">
         {t("Hi, my name is")}
       </p>
-      <p className="w-[14ch] font-mono overflow-hidden text-7xl font-bold mb-4 text-gray-100 border-r-4 border-black whitespace-nowrap animate-typing fade-in">
+      <p className="w-[6ch] md:w-[10ch] 2xl:w-[14ch] font-mono overflow-hidden text-3xl md:text-7xl font-bold mb-4 text-gray-100 border-r-4 border-black whitespace-nowrap animate-typing fade-in">
         {t("AbrorXoliqov")}.<span className="animate-blink">|</span>
       </p>
-      <p className="text-5xl mb-4 text-gray-300 fade-in">
+      <p className="text-lg md:text-2xl 2xl:text-5xl mb-4 text-gray-300 fade-in">
         {t("I build full-stack applications.")}
       </p>
-      <p className="text-xl mb-4 max-w-4xl text-green-200 fade-in">
+      <p className="text-sm md:text-xl mb-4 max-w-4xl text-green-200 fade-in">
         {t("I am a Full-stack developer specializing in building websites for your business. Currently, I am looking for opportunities in this field!")}
       </p>
-      <p className="font-bol  d fade-in text-gray-300">
+      <p className="font-bol d fade-in text-gray-300">
         {t("If you are interested in my works,")}{" "}
         <span
-          className="text-red-600 text-2xl cursor-pointer font-normal"
+          className="text-red-600 text-lg md:text-2xl cursor-pointer font-normal"
           onClick={() => navigate("/about")}
         >
           <u>{t("let's start!")}</u>

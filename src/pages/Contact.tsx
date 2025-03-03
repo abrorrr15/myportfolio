@@ -169,7 +169,7 @@ function Contact() {
               className="w-full py-2 px-3 mt-1 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
-          <div className="col-span-2 fade-in2">
+          <div className="flex fade-in2 whitespace-nowrap text-sm">
             <button
               disabled={isLoading}
               type="submit"
@@ -179,7 +179,7 @@ function Contact() {
             </button>
             <button
               onClick={toggleContactDetails}
-              className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-3 py-1 rounded ml-4 fade-in2"
+              className="bg-[#ff5b5b] hover:bg-[#ce4949] duration-[.3s] text-white px-2 md:px-3 md:py-1 rounded ml-4 fade-in2"
             >
               {t("showContactDetails")}
             </button>

@@ -7,7 +7,7 @@ import { BiLogoInstagram } from "react-icons/bi";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useTranslation } from "react-i18next";
-// Starting without a computer, only a smartphone.
+
 function About() {
   const { t } = useTranslation();
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -39,13 +39,13 @@ function About() {
 
   return (
     <div
-      className="min-h-screen overflow-y-auto custom-scrollbar"
+      className="min-h-screen overflow-y-auto custom-scrollbar text-sm md:text-base"
       ref={contentRef}
     >
       <header className="flex items-center justify-between font-medium text-white fade-in">
         <div className="flex items-center m-[2em] mb-[1em] xl:mb-[1.3em] xl:m-[1.5em] 2xl:m-[1em] 2xl:mb-[1.5em] text-3xl font-medium text-white fade-in">
           <RxAvatar size={35} />
-          <span className="ml-2">{t("aboutMe")}</span>
+          <span className="md:ml-2">{t("aboutMe")}</span>
         </div>
         <Logo />
       </header>
@@ -79,11 +79,12 @@ function About() {
             {t(". Down below you can see photos of my university and office.")}
           </p>
           <br />
-          <div className="grid grid-cols-2 grid-rows-1 place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 space-y-4 md:space-y-0 place-items-center">
             <img
               src="univer.jpg"
               alt="O'zMu"
               className="w-[13rem] h-[13rem] rounded-[10px]"
+              loading="lazy"
             />
             <Swiper
               spaceBetween={30}
@@ -175,7 +176,7 @@ function About() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub size={30} className="text-black" />
+              <FaGithub size={24} className="text-black" />
             </a>
             <a
               href="http://www.instagram.com/abrorrr15/"
@@ -183,7 +184,7 @@ function About() {
               rel="noopener noreferrer"
             >
               <BiLogoInstagram
-                size={30}
+                size={24}
                 className="bg-gray-200 rounded-[50%] text-[#bc2a8d]"
               />
             </a>
@@ -192,10 +193,10 @@ function About() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTelegram size={30} className="text-blue-500" />
+              <FaTelegram size={24} className="text-blue-500" />
             </a>
             <Link to="/contact">
-              <FaPhone size={30} className="text-green-500" />
+              <FaPhone size={24} className="text-green-500" />
             </Link>
           </div>
           <br />
